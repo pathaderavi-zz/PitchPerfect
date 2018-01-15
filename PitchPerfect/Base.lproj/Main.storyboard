@@ -18,37 +18,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4op-El-Mtf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4op-El-Mtf" userLabel="RecordButton">
                                 <rect key="frame" x="110" y="256" width="155" height="155"/>
                                 <state key="normal" image="Record"/>
+                                <connections>
+                                    <action selector="recordButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aRQ-kK-z2e"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HM-FB-voW">
-                                <rect key="frame" x="129" y="419" width="116" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZ7-GU-sjR" userLabel="StatusLabel">
+                                <rect key="frame" x="134" y="419" width="106.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bM-Uf-uFX">
-                                <rect key="frame" x="155.5" y="448" width="64" height="64"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYx-K4-fyl">
+                                <rect key="frame" x="155.5" y="439" width="64" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="XIv-za-PTr"/>
-                                    <constraint firstAttribute="width" constant="64" id="uds-5M-h9F"/>
+                                    <constraint firstAttribute="width" constant="64" id="c5w-Pz-UaB"/>
+                                    <constraint firstAttribute="height" constant="64" id="hJW-aL-d3V"/>
                                 </constraints>
                                 <state key="normal" image="Stop"/>
+                                <connections>
+                                    <action selector="stopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xz9-Mh-470"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="0HM-FB-voW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="129" id="4C9-iL-6bD"/>
-                            <constraint firstItem="0HM-FB-voW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ELI-zU-ske"/>
-                            <constraint firstItem="0HM-FB-voW" firstAttribute="centerX" secondItem="4op-El-Mtf" secondAttribute="centerX" id="b3E-Ow-lIt"/>
-                            <constraint firstItem="0HM-FB-voW" firstAttribute="top" secondItem="4op-El-Mtf" secondAttribute="bottom" constant="8" id="cbK-Wd-dwu"/>
-                            <constraint firstItem="1bM-Uf-uFX" firstAttribute="top" secondItem="0HM-FB-voW" secondAttribute="bottom" constant="8" symbolic="YES" id="jHn-EV-KsA"/>
+                            <constraint firstItem="4op-El-Mtf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FT1-GT-0Ww"/>
+                            <constraint firstItem="FZ7-GU-sjR" firstAttribute="top" secondItem="4op-El-Mtf" secondAttribute="bottom" constant="8" symbolic="YES" id="HJO-om-x0Z"/>
+                            <constraint firstItem="fYx-K4-fyl" firstAttribute="top" secondItem="FZ7-GU-sjR" secondAttribute="bottom" constant="-1" id="Lir-MJ-ypH"/>
+                            <constraint firstItem="fYx-K4-fyl" firstAttribute="centerX" secondItem="FZ7-GU-sjR" secondAttribute="centerX" id="Nit-ik-GZA"/>
+                            <constraint firstItem="4op-El-Mtf" firstAttribute="centerX" secondItem="FZ7-GU-sjR" secondAttribute="centerX" id="TuU-Lk-6BT"/>
                             <constraint firstItem="4op-El-Mtf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nQH-U3-Knr"/>
-                            <constraint firstItem="0HM-FB-voW" firstAttribute="centerX" secondItem="1bM-Uf-uFX" secondAttribute="centerX" id="nvI-c2-8zo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="recordButtonVar" destination="4op-El-Mtf" id="GBB-EK-dP2"/>
+                        <outlet property="statusLabel" destination="FZ7-GU-sjR" id="oMk-YH-fo2"/>
+                        <outlet property="stopButtonVar" destination="fYx-K4-fyl" id="2y3-kQ-0Ra"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
