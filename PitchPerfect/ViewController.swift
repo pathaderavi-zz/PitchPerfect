@@ -38,7 +38,7 @@ class ViewController: UIViewController , AVAudioRecorderDelegate{
         recordButtonVar.isEnabled = false
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
-        let recordingName = "recordedVoice1.wav"
+        let recordingName = "recordedVoice.wav"
         let pathArray = [dirPath, recordingName]
         let filePath = URL(string: pathArray.joined(separator: "/"))
         
@@ -81,7 +81,7 @@ class ViewController: UIViewController , AVAudioRecorderDelegate{
         if(segue.identifier=="recordedSegue"){
                 let playSoundsVC = segue.destination as! PlaySoundsViewController
                 let recordedAudioUrl = sender as! URL
-                playSoundsVC.recordedAudioUrl = recordedAudioUrl
+                playSoundsVC.recordedAudioURL = recordedAudioUrl
         }
     }
 }
