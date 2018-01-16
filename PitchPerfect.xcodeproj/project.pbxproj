@@ -12,6 +12,7 @@
 		404FE925200D4A4E00472338 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 404FE923200D4A4E00472338 /* Main.storyboard */; };
 		404FE927200D4A4E00472338 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 404FE926200D4A4E00472338 /* Assets.xcassets */; };
 		404FE92A200D4A4E00472338 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 404FE928200D4A4E00472338 /* LaunchScreen.storyboard */; };
+		404FE932200D799800472338 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404FE931200D799800472338 /* PlaySoundsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		404FE926200D4A4E00472338 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		404FE929200D4A4E00472338 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		404FE92B200D4A4E00472338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		404FE931200D799800472338 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				404FE926200D4A4E00472338 /* Assets.xcassets */,
 				404FE928200D4A4E00472338 /* LaunchScreen.storyboard */,
 				404FE92B200D4A4E00472338 /* Info.plist */,
+				404FE931200D799800472338 /* PlaySoundsViewController.swift */,
 			);
 			path = PitchPerfect;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				404FE922200D4A4E00472338 /* ViewController.swift in Sources */,
+				404FE932200D799800472338 /* PlaySoundsViewController.swift in Sources */,
 				404FE920200D4A4E00472338 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
