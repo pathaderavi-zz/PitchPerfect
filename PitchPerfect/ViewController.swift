@@ -27,15 +27,10 @@ class ViewController: UIViewController , AVAudioRecorderDelegate{
         // Dispose of any resources that can be recreated.
     }
     override func viewWillAppear(_ animated: Bool) {
-        stopButtonVar.isEnabled = false
+       configureUIforRecord(state: false)
     }
     @IBAction func recordButton(_ sender: Any) {
-        stopButtonVar.isEnabled = true
-        recordButtonVar.isEnabled = false
-        
-        statusLabel.text = "Recording in progress"
-        stopButtonVar.isEnabled = true
-        recordButtonVar.isEnabled = false
+       configureUIforRecord(state: true)
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
@@ -53,24 +48,26 @@ class ViewController: UIViewController , AVAudioRecorderDelegate{
     }
     
     @IBAction func stopButton(_ sender: Any) {
-        stopButtonVar.isEnabled = false
-        recordButtonVar.isEnabled = true
-        statusLabel.text = "Tap to Record"
-        print(audioRecorder == nil)
-        
+        configureUIforRecord(state: false)
         audioRecorder.stop()
-        
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
     }
     
-    @IBAction func recordAudio(_ sender: AnyObject) {
-        
+    func configureUIforRecord(state: Bool){
+        if state{
+            stopButtonVar.isEnabled = true
+            recordButtonVar.isEnabled = false
+            statusLabel.text = "Recording in progress"
+        }else{
+            stopButtonVar.isEnabled = false
+            recordButtonVar.isEnabled = true
+            statusLabel.text = "Tap to Record"
+        }
     }
-    //Override audioRecorder is Finished
+    //MARK: Override audioRecorder is Finished
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag{
-            print("yes")
             performSegue(withIdentifier: "recordedSegue", sender: audioRecorder.url)
         }else{
             print("failed")
